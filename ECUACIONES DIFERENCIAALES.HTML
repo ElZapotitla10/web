@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicios Resueltos – Transformada de Laplace</title>
+  <style>
+    /* Estilos para la portada */
+    #cover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1a1a1a;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      text-align: center;
+      padding: 20px;
+    }
+    #cover h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    #cover p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin-bottom: 20px;
+    }
+    #cover .info {
+      font-size: 1em;
+      margin-bottom: 40px;
+    }
+    #enter-btn {
+      padding: 10px 20px;
+      font-size: 1.2em;
+      background: #007BFF;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    /* Estilos generales para la página principal */
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background-color: #fdfdfd;
+      color: #333;
+    }
+    header, footer {
+      text-align: center;
+      padding: 10px 0;
+    }
+    nav {
+      margin: 20px 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+    nav li {
+      display: inline;
+      margin-right: 15px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
+    }
+    section {
+      margin: 40px auto;
+      max-width: 800px;
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+    .exercise-title {
+      color: #0056b3;
+    }
+    .solution {
+      background-color: #eef;
+      border-left: 5px solid #007BFF;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Portada de presentación -->
+  <div id="cover">
+    <h1>Transformada de Laplace</h1>
+    <p>Ejercicios Resueltos de Matemáticas IV – Universidad Autónoma Juan Misael Saracho</p>
+    <div class="info">
+      <p>Página creada por: Emily Samantha Sáenz Santiago, Romina Guadalupe Rojas Pérez, Marcos Emmanuel Zpotitla Perez , Carlos Enrique Ríos Aguilar</p>
+      <p>Materia: Ecuaciones Diferenciales</p>
+      <p>Docente: Garizurieta Castillo Oscar Alberto</p>
+    </div>
+    <button id="enter-btn">Entrar</button>
+  </div>
+
+  <!-- Contenido principal -->
+  <header>
+    <h1>Ejercicios Resueltos: Transformada de Laplace</h1>
+    <p>Matemáticas IV – Universidad Autónoma Juan Misael Saracho</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#ej1">Ejercicio 1</a></li>
+      <li><a href="#ej2">Ejercicio 2</a></li>
+      <li><a href="#ej3">Ejercicio 3</a></li>
+      <li><a href="#ej4">Ejercicio 4</a></li>
+      <li><a href="#ej5">Ejercicio 5</a></li>
+      <!-- Puedes agregar más enlaces conforme a la cantidad de ejercicios -->
+    </ul>
+  </nav>
+  
+  <!-- Ejercicio 1 -->
+  <section id="ej1">
+    <h2 class="exercise-title">Ejercicio 1: Condiciones de Existencia y Abscisa de Convergencia</h2>
+    <p>
+      <strong>Enunciado:</strong> Estudiar si la función f(t) verifica las condiciones suficientes para que exista su transformada de Laplace y, en caso afirmativo, determinar la abscisa de convergencia.
+    </p>
+    <p>
+      <strong>Ejemplo:</strong> f(t) = { 0, t < 0; 1, t ≥ 0 }.
+    </p>
+    <div class="solution">
+      <p>
+        <strong>Solución:</strong> La función es continua a trozos y de orden exponencial. Su transformada existe y la abscisa de convergencia es α = 0.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Ejercicio 2 -->
+  <section id="ej2">
+    <h2 class="exercise-title">Ejercicio 2: Cálculo de Transformadas de Laplace</h2>
+    <p>
+      <strong>Enunciado:</strong> Calcular la transformada de Laplace de las siguientes funciones definidas en ℝ<sup>+</sup> y comprobar los resultados con Matlab.
+    </p>
+    <p>
+      <strong>a)</strong> f(t) = 1.
+    </p>
+    <div class="solution">
+      <p>
+        <strong>Solución:</strong> F(s) = ∫₀<sup>∞</sup> e<sup>–st</sup> dt = 1/s, para s > 0.
+      </p>
+    </div>
+    <p>
+      <strong>b)</strong> f(t) = e<sup>at</sup>.
+    </p>
+    <div class="solution">
+      <p>
+        <strong>Solución:</strong> F(s) = ∫₀<sup>∞</sup> e<sup>–st</sup> e<sup>at</sup> dt = 1/(s – a), para s > a.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Ejercicio 3 -->
+  <section id="ej3">
+    <h2 class="exercise-title">Ejercicio 3: Uso de Funciones de Heaviside</h2>
+    <p>
+      <strong>Enunciado:</strong> Definir la función f(t) utilizando la función escalón (Heaviside) y hallar su transformada de Laplace.
+    </p>
+    <p>
+      Ejemplo: f(t) = U(t) – U(t – 3).
+    </p>
+    <div class="solution">
+      <p>
+        <strong>Solución:</strong> F(s) = 1/s – e<sup>–3s</sup>/s, para s > 0.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Ejercicio 4 -->
+  <section id="ej4">
+    <h2 class="exercise-title">Ejercicio 4: Transformada Inversa de Laplace</h2>
+    <p>
+      <strong>Enunciado:</strong> Calcular la transformada inversa de Laplace de F(s) = 1/[(s² + 1)(s + 1)].
+    </p>
+    <div class="solution">
+      <p>
+        <strong>Solución:</strong> Descomponiendo en fracciones parciales, se obtiene:
+        <br>
+        f(t) = (1/2)[cos(t) – sin(t)]e<sup>–t</sup>, para t ≥ 0.
+      </p>
+    </div>
+  </section>
+  
+  <!-- Ejercicio 5 -->
+  <section id="ej5">
+    <h2 class="exercise-title">Ejercicio 5: Resolución de Ecuaciones Diferenciales</h2>
+    <p>
+      <strong>Enunciado:</strong> Resolver la ecuación diferencial: y″ – 5y′ + 6y = 0, con condiciones iniciales y(0) = 0 y y′(0) = 1.
+    </p>
+    <div class="solution">
+      <p>
+        <strong>Solución:</strong> Aplicando la transformada de Laplace se transforma la ecuación en una ecuación algebraica, de donde se obtiene:
+        <br>
+        y(t) = e<sup>2t</sup> – e<sup>3t</sup>, que satisface las condiciones iniciales.
+      </p>
+    </div>
+  </section>
+  
+  <footer>
+    <p>© 2025 Tarea de Ecuaciones Diferenciales - Universidad Autónoma Juan Misael Saracho</p>
+  </footer>
+
+  <script>
+    // Al hacer clic en el botón se oculta la portada
+    document.getElementById('enter-btn').addEventListener('click', function() {
+      document.getElementById('cover').style.display = 'none';
+    });
+  </script>
+</body>
+</html>
